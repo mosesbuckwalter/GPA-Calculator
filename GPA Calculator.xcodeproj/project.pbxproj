@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		811399CD262DA7B500EFA5CC /* GPA Calculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "GPA Calculator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		811399D0262DA7B500EFA5CC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		81EFBE7B262DAAB200AB4537 /* gpa.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = gpa.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				811399D0262DA7B500EFA5CC /* main.swift */,
+				81EFBE7B262DAAB200AB4537 /* gpa.txt */,
 			);
 			path = "GPA Calculator";
 			sourceTree = "<group>";
