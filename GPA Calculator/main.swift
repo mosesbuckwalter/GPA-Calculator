@@ -17,26 +17,9 @@ func GPArray() -> Array <String> {
     }
 }
 
-let "CP A" = 4
-let "CP B" = 3
-let "CP C" = 2
-let "CP D" = 1
-let "Career A" = 4
-let "Career B" = 3
-let "Career C" = 2
-let "Career D" = 1
-let "Honors A" = 4.5
-let "Honors B" = 3.5
-let "Honors C" = 2.5
-let "Honors D" = 1.5
-let "AP A" = 5
-let "AP B" = 4
-let "AP C" = 3
-let "AP D" = 2
-let "AP+ A" = 5.5
-let "AP+ B" = 4.5
-let "AP+ C" = 3.5
-let "AP+ D" = 2.5
+
+let (Classtype, lettergrade)
+
 struct Color {
     let red, green, blue: Double
     init(red: Double, green: Double, blue: Double) {
@@ -52,18 +35,42 @@ struct Color {
 }
 let magenta = Color(red: 1.0, green: 0.0, blue: 1.0)
 let halfGray = Color(white: 0.5)
-struct GPA {
+struct GPA1 {
     let "AP+", "AP", "Honors", "CP", "Career": Double
-    init(AP+: Double, AP: Double, Honors: Double, CP: Double, Career: Double) {
-        self.AP+   = red
-        self.green = green
-        self.blue  = blue
-    }
-    init(white: Double) {
-        red   = white
-        green = white
-        blue  = white
+    init("AP+": Double, "AP": Double, "Honors": Double, "CP": Double, "Career": Double) {
+        self."AP+"   = red
+        self."AP" = green
+        self."Honors"  = blue
+        self."CP"  = blue
+        self."Career"  = blue
     }
 }
-let magenta = Color(red: 1.0, green: 0.0, blue: 1.0)
-let halfGray = Color(white: 0.5)
+let mygpa = Color(red: 1.0, green: 0.0, blue: 1.0)
+
+
+struct LetterGrade {
+    var a, b, c, d, f
+}
+struct ClassType {
+    var x = 0.0, y = 0.0
+}
+struct GPA {
+    var Class = ClassType()
+    var Grade = LetterGrade()
+    init() {}
+    init(Class: ClassType, Grade: LetterGrade) {
+        self.ClassType = ClassType
+        self.Grade = Grade
+    }
+}
+
+
+
+
+let ClassGrade = "[[39.86475483576405,-75.53281903266907], [39.864688955564304,-75.53292632102966], [39.86455719497505,-75.53300142288208], [39.86440072894666,-75.5330228805542], [39.8642689678039,-75.53295850753784], [39.863305456757146,-75.53223967552185], [39.86303369478483,-75.53266882896423]]"
+
+if let data = ClassGrade.data(using: .utf8),
+    let jsonArray = try? JSONSerialization.jsonObject(with: data) as? [[Double]] {
+    let ClassGradeArray  = jsonArray!.map{CLLocation(Class:$0[0], Grade:$0[1]) }
+    print(ClassGradeArray)
+}
