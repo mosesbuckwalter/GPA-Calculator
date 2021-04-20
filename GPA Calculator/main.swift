@@ -22,11 +22,10 @@ let GPAString = GPArray().joined(separator: "")
 let pairs = GPAString.components(separatedBy: "\n")
 print(pairs)
 
-let GPAValues = [1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 9.5, 13.5, 12.5, 15.5, 18.5, 35.5, 76.5, 9.5]
+let GPAValues = [4, 4, 4, 4, 4.5, 4.5, 4.5, 4.5, 5, 5, 4.5, 4.5, 4.5, 4, 4, 3, 5, 4.5, 4.5, 4]
 
 let Sum = GPAValues.reduce(0, +)
 let GPASum = Sum
-print(GPASum)
 let GPANumber = GPAValues.count
 var GPA:Double=(GPASum/Double(GPANumber))
 print(GPA)
