@@ -20,12 +20,17 @@ func GPArray() -> Array <String> {
 
 let GPAString = GPArray().joined(separator: "")
 let pairs = GPAString.components(separatedBy: "\n")
-print(pairs)
+var GPAValuesString = pairs.map { $0 == "CP A" ? "4" : $0 }
+print(GPAValuesString)
+let GPAValues = GPAValuesString.compactMap { Int($0) }
+print(GPAValues)
 
-let GPAValues = [4, 4, 4, 4, 4.5, 4.5, 4.5, 4.5, 5, 5, 4.5, 4.5, 4.5, 4, 4, 3, 5, 4.5, 4.5, 4]
+let GPAValues2 = [4, 4, 4, 4, 4.5, 4.5, 4.5, 4.5, 5, 5, 4.5, 4.5, 4.5, 4, 4, 3, 5, 4.5, 4.5, 4]
 
 let Sum = GPAValues.reduce(0, +)
 let GPASum = Sum
 let GPANumber = GPAValues.count
-var GPA:Double=(GPASum/Double(GPANumber))
+var GPA:Double=(Double(GPASum)/Double(GPANumber))
 print(GPA)
+
+
