@@ -49,6 +49,6 @@ print(GPAValuesDict)
 print(GPAValues)
 print(GPASum)
 print(GPANumber)
-print(GPA)
+print("Your GPA is", GPA )
 
 
