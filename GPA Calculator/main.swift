@@ -39,22 +39,6 @@ var GPAValuesDict: [String : Float] = [
     "AP+ D": 2.5,
 ]
 
-
-let sortedArray = GPAValuesDict.filter { key, value in
-    return value == 2.5
-}
-print(sortedArray)
-
-var array = [Float]()
-let values = GPAValuesDict.values.sorted()
-for value in values {
-    let item = GPAValuesDict[value]
-    array.append(item ?? 0)
-}
-print(array)
-
-
-
 let GPAValues = GPAValuesDict.values.map({$0})
 let GPASum = GPAValues.reduce(0, +)
 let GPANumber = GPAValues.count
