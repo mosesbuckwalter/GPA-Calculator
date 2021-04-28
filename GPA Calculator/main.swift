@@ -15,10 +15,9 @@ func GPArray() -> Array <String> {
         }
 }
 
-
-let pairs = ["Honors A", "Honors A", "Honors A", "Honors A", "CP A", "CP A", "CP A", "CP A", Honors A, Honors A, Honors A, AP A, AP A, CP A, CP A, "CP B"]
+let pairs = ["Honors A", "Honors A", "Honors A", "Honors A", "CP A", "CP A", "CP A", "CP A", "Honors A", "Honors A", "Honors A", "AP A", "AP A", "CP A", "CP A", "CP B"]
 let GPAString = GPArray().joined(separator: "")
-let pairs = GPAString.components(separatedBy: "\n")
+var pairs = GPAString.components(separatedBy: "\n")
 var GPAValuesDict: [String : Float] = [
     "CP A": 4,
     "CP B": 3,
