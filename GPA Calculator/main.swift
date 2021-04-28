@@ -14,8 +14,6 @@ func GPArray() -> Array <String> {
             return [String]()
         }
 }
-
-let pairs = ["Honors A", "Honors A", "Honors A", "Honors A", "CP A", "CP A", "CP A", "CP A", "Honors A", "Honors A", "Honors A", "AP A", "AP A", "CP A", "CP A", "CP B"]
 let GPAString = GPArray().joined(separator: "")
 var pairs = GPAString.components(separatedBy: "\n")
 var GPAValuesDict: [String : Float] = [
@@ -40,19 +38,8 @@ var GPAValuesDict: [String : Float] = [
     "AP+ C": 3.5,
     "AP+ D": 2.5,
 ]
-
-for i in 0..<pairs.count {
-  pairs[i] = GPAValuesDict[pairs[i]]
-}
-
-let GPAValues = GPAValuesDict.values.map({$0})
+let GPAValues = pairs.map { GPAValuesDict[$0]! }
 let GPASum = GPAValues.reduce(0, +)
 let GPANumber = GPAValues.count
 var GPA:Double=(Double(GPASum)/Double(GPANumber))
-
-print(pairs)
-print(GPAValuesDict)
-print(GPAValues)
-print(GPASum)
-print(GPANumber)
 print("Your GPA is", GPA )
